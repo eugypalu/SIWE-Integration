@@ -1,0 +1,32 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - 3001:3001
+    volumes:
+      - ./backend:/app
+    environment:
+      BACKEND_HOST: ${BACKEND_HOST}
+      BACKEND_PORT: ${BACKEND_PORT}
+      FRONTEND_HOST: ${FRONTEND_HOST}
+      FRONTEND_PORT: ${FRONTEND_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - db
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    environment:
+      REACT_APP_BACKEND_HOST: ${REACT_APP_BACKEND_HOST}
+      REACT_APP_BACKEND_PORT: ${REACT_APP_BACKEND_PORT}
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
