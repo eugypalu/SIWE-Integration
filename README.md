@@ -12,7 +12,7 @@ The structure of the project is as follows:
 
 
 Everything was dockerized to make it easier to run and deploy.
-The web app has been deployed on AWS and can be reached at: http://52.51.31.242:3000
+The web app has been deployed on AWS
 
 
 # How to run application locally
@@ -31,10 +31,10 @@ To run the project it is necessary to set some environment variables as well, bu
 # How to test the depoloyed version
 ## Desktop
 
-From **desktop** browser simply have **metamask** installed and go to http://52.51.31.242:3000
+From **desktop** browser simply have **metamask** installed
 
 ## Mobile
-To test from **mobile** use the **browser** inside the **metamask mobile app**, and enter the url: http://52.51.31.242:3000
+To test from **mobile** use the **browser** inside the **metamask mobile app**, and enter the url
 
 # libraries & frameworks
 
